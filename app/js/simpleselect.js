@@ -1,6 +1,8 @@
 (function( $ ) {
     $.fn.simpleSelect = function() {
 
+        //todo check for multy selects
+
         function createSelectors(elem){
             var parent = elem;
             var parentOptions = elem.find("option");

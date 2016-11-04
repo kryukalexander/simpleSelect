@@ -39,7 +39,6 @@ gulp.task('browser-sync', function() {
     });
 });
 
-
 //Watch
 
 gulp.task('watch', ['browser-sync', 'sass'], function() {
@@ -70,7 +69,6 @@ gulp.task('build', ['clean', 'sass'], function() {
         .pipe(uglify())
         .pipe(rename('simpleselect.min.js'))
         .pipe(gulp.dest(build + '/js'));
-
 
     var buildscss = gulp.src(scss_patch + '/simpleselect.scss')
         .pipe(gulp.dest(build + '/scss'));
