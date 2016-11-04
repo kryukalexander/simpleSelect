@@ -1,0 +1,52 @@
+.ss-container {
+  display: block;
+  width: 100%;
+  position: relative;
+  font-size: 1em;
+  margin-bottom: 0.5em; }
+  .ss-container:last-of-type {
+    margin-bottom: 0; }
+  .ss-container * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box; }
+
+.ss-display {
+  padding: 0.5em 2em 0.5em 0.5em;
+  background: gray;
+  color: white;
+  -webkit-border-radius: 0.5em;
+          border-radius: 0.5em;
+  position: relative; }
+  .ss-display:before {
+    content: '';
+    position: absolute;
+    border: 0.4em solid transparent;
+    border-top-color: white;
+    right: 0.6em;
+    top: 50%;
+    margin-top: -0.2em; }
+  .opened .ss-display {
+    -webkit-border-radius: 0.5em 0.5em 0 0;
+            border-radius: 0.5em 0.5em 0 0; }
+
+.ss-options {
+  border: 1px solid gray;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: none;
+  -webkit-border-radius: 0 0 0.5em 0.5em;
+          border-radius: 0 0 0.5em 0.5em;
+  background-color: white; }
+  .opened .ss-options {
+    display: block;
+    z-index: 10; }
+  .ss-options-item {
+    padding: 0.5em;
+    color: gray; }
+    .ss-options-item:last-of-type {
+      margin-bottom: 0.5em; }
+    .ss-options-item:hover {
+      background-color: gray;
+      color: white; }

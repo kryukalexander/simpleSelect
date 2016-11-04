@@ -1,0 +1,91 @@
+// Variables
+$primary-color: gray;
+$secondary-color: white;
+
+$border-radius: 0.5em;
+$select-font-size: 1em;
+$display-fill-color: $primary-color;
+$display-text-color: $secondary-color;
+$options-border: 1px solid $primary-color;
+$options-fill-color: $secondary-color;
+$options-text-color: $primary-color;
+$option-hover-fill: $primary-color;
+$option-hover-text: $secondary-color;
+$caret-color: $secondary-color;
+$caret-size: 0.4em;
+
+.ss-container {
+
+    display: block;
+    width: 100%;
+    position: relative;
+    font-size: $select-font-size;
+    margin-bottom: 0.5em;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.ss-display {
+    padding: 0.5em 5 * $caret-size 0.5em 0.5em;
+    background: $display-fill-color;
+    color: $display-text-color;
+    border-radius: $border-radius;
+    position: relative;
+
+    //.ss-multy {
+    //    background-color: black;
+    //    display: inline-block;
+    //    font-size: 0.8em;
+    //    padding: 0.2em 0.4em 0.1em;
+    //    vertical-align: baseline;
+    //}
+
+    &:before {
+        content: '';
+        position: absolute;
+        border: $caret-size solid transparent;
+        border-top-color: $caret-color;
+        right: 1.5 * $caret-size;
+        top: 50%;
+        margin-top: -0.5 * $caret-size;
+    }
+
+    .opened & {
+        border-radius: $border-radius $border-radius 0 0;
+    }
+}
+
+.ss-options {
+    border: $options-border;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: none;
+    border-radius: 0 0 $border-radius $border-radius;
+    background-color: $options-fill-color;
+
+    .opened & {
+        display: block;
+        z-index: 10;
+    }
+
+    &-item {
+        padding: 0.5em;
+        color: $options-text-color;
+
+        &:last-of-type {
+            margin-bottom: 0.5em;
+        }
+
+        &:hover {
+            background-color: $option-hover-fill;
+            color: $option-hover-text;
+        }
+    }
+}
