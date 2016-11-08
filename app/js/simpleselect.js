@@ -68,8 +68,8 @@
             }
         });
 
-        $(".ss-display").on("blur", function () {
-            $(this).parent().removeClass("opened");
+        $(".ss-display").on("focus", function(){
+            $(".opened").removeClass("opened");
         });
 
         $(".ss-options-item").click(function(){
@@ -77,8 +77,8 @@
             var value = $(this).attr("data-value");
             var name = $(ss).attr('data-name');
             setValue(value, ss);
-            $(ss).removeClass("opened");
             $('[name="' + name + '"]').val( value );
+            $(ss).removeClass("opened");
         });
 
         $("select").change(function(){

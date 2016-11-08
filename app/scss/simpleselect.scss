@@ -12,7 +12,7 @@ $options-text-color: $primary-color;
 $option-hover-fill: $primary-color;
 $option-hover-text: $secondary-color;
 $caret-color: $secondary-color;
-$caret-size: 0.4em;
+$caret-size: 0.5em;
 
 .ss-container {
 
@@ -59,10 +59,18 @@ $caret-size: 0.4em;
         right: 1.5 * $caret-size;
         top: 50%;
         margin-top: -0.5 * $caret-size;
+        transition-duration: .5s;
+        transform-origin: center center;
     }
 
     .opened & {
         border-radius: $border-radius $border-radius 0 0;
+    }
+
+    .opened &:before {
+        margin-top: -1.5 * $caret-size;
+        transition-duration: .5s;
+        transform: rotate(180deg);
     }
 }
 
