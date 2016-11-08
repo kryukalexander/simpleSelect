@@ -33,7 +33,8 @@ gulp.task('browser-sync', function() {
     browserSync({
         server: {
             baseDir: dir,
-            index: 'test.html'
+            directory: true
+            // ,index: 'test.html'
         },
         notify: false
     });
