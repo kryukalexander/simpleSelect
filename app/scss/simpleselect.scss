@@ -12,7 +12,7 @@ $options-text-color: $primary-color;
 $option-hover-fill: $primary-color;
 $option-hover-text: $secondary-color;
 $caret-color: $secondary-color;
-$caret-size: 0.5em;
+$caret-size: 0.4em;
 
 .ss-container {
 
@@ -28,6 +28,7 @@ $caret-size: 0.5em;
 
     * {
         box-sizing: border-box;
+        font-size: inherit;
     }
 }
 
