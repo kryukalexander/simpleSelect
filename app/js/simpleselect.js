@@ -72,8 +72,9 @@
         });
 
         //todo Think about focus issue with another objects
+        //todo Add option close if click outside
 
-        $(".ss-display").on("focus", function(){
+        $("*").on("focus", function(){
             $(".opened").removeClass("opened");
         });
 
