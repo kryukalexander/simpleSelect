@@ -46,11 +46,14 @@
 
             if ( Number.isInteger(x) ) {
                 var val = option.eq(x).html();
+                $(option).eq(x).addClass("selected");
                 selval = option.eq(x).attr('data-value');
             } else {
                 val = $(select).find('[data-value="' + x + '"]').html();
+                $(select).find('[data-value="' + x + '"]').addClass("selected");
                 selval = x;
             }
+
             $(display).html(val);
             $(select).attr("data-selected", selval);
         }
@@ -73,12 +76,20 @@
         });
 
         $(".ss-options-item").click(function(){
-            var ss = $(this).closest('.ss-container');
-            var value = $(this).attr("data-value");
-            var name = $(ss).attr('data-name');
-            setValue(value, ss);
-            $('[name="' + name + '"]').val( value );
-            $(ss).removeClass("opened");
+
+            var isSelected = $(this).hasClass("selected");
+
+            if (isSelected) {
+                return false;
+            } else {
+                var ss = $(this).closest('.ss-container');
+                var value = $(this).attr("data-value");
+                var name = $(ss).attr('data-name');
+                setValue(value, ss);
+                $('[name="' + name + '"]').val( value );
+                $(ss).removeClass("opened");
+            }
+
         });
 
         $("select").change(function(){

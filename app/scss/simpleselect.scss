@@ -100,5 +100,14 @@ $caret-size: 0.5em;
             background-color: $option-hover-fill;
             color: $option-hover-text;
         }
+
+        &.selected{
+            color: rgba($options-text-color, 0.5)
+        }
+
+        &.selected:hover{
+            color: rgba($option-hover-text, 0.5);
+            cursor: not-allowed;
+        }
     }
 }
