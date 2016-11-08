@@ -1,31 +1,31 @@
 (function( $ ) {
     $.fn.simpleSelect = function() {
 
-        //todo check for multy selects
-
         function createSelectors(elem){
-            var parent = elem;
             var parentOptions = elem.find("option");
-            var name = parent.attr("name");
+            var name = elem.attr("name");
             var newSS = document.createElement("div");
             var newSS_display = document.createElement("button");
             var newSS_active = document.createElement("div");
             var newSS_options = document.createElement("div");
-            newSS.classList.add("ss-container");
-            $(newSS).attr("data-name", name);
-            $(newSS).attr("data-selected", "");
-            newSS_display.classList.add("ss-display");
-            newSS_active.classList.add("ss-active");
-            newSS_options.classList.add("ss-options");
-            newSS_display.appendChild(newSS_active);
-            newSS.appendChild(newSS_display);
-            newSS.appendChild(newSS_options);
-            $(newSS).insertAfter(elem);
-            $(parentOptions).each( function(){
-                createOption( $(this), newSS_options );
-            } );
-            setValue(0, newSS);
-            elem.hide();
+
+            if ( !elem.attr("multiple") ) {
+                newSS.classList.add("ss-container");
+                $(newSS).attr("data-name", name);
+                $(newSS).attr("data-selected", "");
+                newSS_display.classList.add("ss-display");
+                newSS_active.classList.add("ss-active");
+                newSS_options.classList.add("ss-options");
+                newSS_display.appendChild(newSS_active);
+                newSS.appendChild(newSS_display);
+                newSS.appendChild(newSS_options);
+                $(newSS).insertAfter(elem);
+                $(parentOptions).each( function(){
+                    createOption( $(this), newSS_options );
+                } );
+                setValue(0, newSS);
+                elem.hide();
+            }
         }
 
         function createOption(elem, container){
