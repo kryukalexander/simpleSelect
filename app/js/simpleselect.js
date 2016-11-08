@@ -8,7 +8,7 @@
             var parentOptions = elem.find("option");
             var name = parent.attr("name");
             var newSS = document.createElement("div");
-            var newSS_display = document.createElement("div");
+            var newSS_display = document.createElement("button");
             var newSS_active = document.createElement("div");
             var newSS_options = document.createElement("div");
             newSS.classList.add("ss-container");
@@ -60,7 +60,16 @@
         });
 
         $(".ss-display").click(function(){
-            $(this).parent().toggleClass("opened")
+            var isOpened = $(this).hasClass("opened");
+            $(".opened").removeClass("opened");
+
+            if (!isOpened) {
+                $(this).parent().addClass("opened");
+            }
+        });
+
+        $(".ss-display").on("blur", function () {
+            $(this).parent().removeClass("opened");
         });
 
         $(".ss-options-item").click(function(){

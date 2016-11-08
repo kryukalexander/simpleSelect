@@ -37,6 +37,10 @@ $caret-size: 0.4em;
     color: $display-text-color;
     border-radius: $border-radius;
     position: relative;
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: left;
 
     //todo update styles for multy-selects
     //.ss-multy {
