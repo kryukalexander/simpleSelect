@@ -35,6 +35,7 @@
             newSS_option.classList.add("ss-options-item");
             $(newSS_option).attr("data-value", value);
             $(newSS_option).html(content);
+            $(newSS_option).attr("tabindex", "-1");
             container.append(newSS_option);
         }
 
@@ -114,6 +115,8 @@
             var name = $(this).attr('name');
             setValue( $(this).val(), $('[data-name="' + name + '"]') )
         });
+
+        //todo keyboard arrows for options select
 
     };
 })(jQuery);
