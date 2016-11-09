@@ -71,7 +71,16 @@
             }
         });
 
-        //todo Add option close if click outside
+        $(document).click(function (e){
+            var selector = $(".ss-container");
+            if (!selector.is(e.target) && selector.has(e.target).length === 0) {
+                $(".opened").removeClass("opened");
+            }
+        });
+
+        $(document).on("keyup", function(e){
+           if (e.keyCode == 27) { $(".opened").removeClass("opened"); }
+        });
 
         $("*").on("focus", function(e){
             $(".opened").removeClass("opened");
