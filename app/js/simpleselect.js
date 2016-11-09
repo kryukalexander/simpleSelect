@@ -71,22 +71,23 @@
             }
         });
 
-        //todo Think about focus issue with another objects
         //todo Add option close if click outside
 
-        $("*").on("focus", function(){
+        $("*").on("focus", function(e){
             $(".opened").removeClass("opened");
         });
 
         $(".ss-options-item").click(function(){
 
             var isSelected = $(this).hasClass("selected");
+            var ss = $(this).closest('.ss-container');
+            var button = $(ss).find(".ss-display");
 
             if (isSelected) {
                 return false;
             } else {
 
-                var ss = $(this).closest('.ss-container');
+
                 $(ss).find(".selected").removeClass("selected");
                 $(this).addClass("selected");
                 var value = $(this).attr("data-value");
@@ -95,6 +96,8 @@
                 $('[name="' + name + '"]').val( value );
                 $(ss).removeClass("opened");
             }
+
+            button.focus();
 
         });
 
